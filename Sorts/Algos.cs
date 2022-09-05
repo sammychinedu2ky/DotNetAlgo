@@ -8,13 +8,23 @@ namespace DotNetAlgo.Sorts
 {
     internal class Algos
     {
-    public static List<int> BubbleSort(int[] array)
+    public static int[] BubbleSort(int[] array)
         {
-            for( var i = 0; i < array.Length; i++)
-        {
-            var swapped = false
+            for (var i = 0; i < array.Length; i++)
+            {
+                var swapped = true;
+                for (var j = 0; j < array.Length; j++)
+                {
+                    if (array[j] > array[j + 1])
+                    {
+                        (array[j], array[j + 1]) = (array[j + 1], array[j]);
+                        swapped = false;
+                    }
+                }
+                if (!swapped) return array;
+            }
 
-            return default;
+            return array;
         }
     }
 }
