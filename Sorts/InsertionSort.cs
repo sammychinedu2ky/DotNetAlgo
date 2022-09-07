@@ -17,8 +17,8 @@ namespace DotNetAlgo.Sorts
                 while (array[j-1] > array[j])
                 {
                     (array[j], array[j - 1]) = (array[j - 1], array[j]);
-                    j--;
                     Console.WriteLine(JsonSerializer.Serialize(array));
+                    j--;
                     if (j==0) break;
 
                 }
