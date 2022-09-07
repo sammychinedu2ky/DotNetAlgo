@@ -26,9 +26,10 @@ namespace DotNetAlgo.Sorts
         }
         public static int[] WithWhileLoop(int[] array)
         {
-            while (true)
+            var swapped = true;
+            while (swapped)
             {
-                var swapped = false;
+                swapped = false;
                 for (var j = 0; j < array.Length - 1; j++)
                 {
                     if (array[j] > array[j + 1])
@@ -38,7 +39,6 @@ namespace DotNetAlgo.Sorts
                         Console.WriteLine(JsonSerializer.Serialize(array));
                     }
                 }
-                if (!swapped) break;
             }
             return array;
         }
