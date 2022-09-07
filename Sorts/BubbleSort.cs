@@ -3,9 +3,9 @@
 
 namespace DotNetAlgo.Sorts
 {
-    internal class Algos
+    internal class BubbleSort
     {
-        public static int[] BubbleSortWithForLoop(int[] array)
+        public static int[] WithForLoop(int[] array)
         {
             for (var i = 0; i < array.Length; i++)
             {
@@ -24,7 +24,7 @@ namespace DotNetAlgo.Sorts
 
             return array;
         }
-        public static int[] BubbleSortWithWhileLoop(int[] array)
+        public static int[] WithWhileLoop(int[] array)
         {
             while (true)
             {
