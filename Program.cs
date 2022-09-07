@@ -6,7 +6,7 @@ class Program
 
     public static void Main()
     {
-        var bubbleSort = BubbleSort.WithWhileLoop(new int[] { 10, 5, 3, 8, 2, 6, 4, 7, 9, 1 });
+        var bubbleSort = InsertionSort.WithForLoop(new int[] { 0, 6, 9, 8, 7, 2, 1, 5, 3, 4});
         Console.WriteLine(bubbleSort);
     }
 }
