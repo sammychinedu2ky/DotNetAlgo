@@ -11,15 +11,15 @@ namespace DotNetAlgo.Sorts
     {
         public static int[] WithForLoop(int[] array)
         {
-            for(var i=1; i<array.Length; i++)
+            for (var i = 1; i < array.Length; i++)
             {
                 var j = i;
-                while (array[j-1] > array[j])
+                while (array[j - 1] > array[j])
                 {
                     (array[j], array[j - 1]) = (array[j - 1], array[j]);
                     j--;
                     Console.WriteLine(JsonSerializer.Serialize(array));
-                    if (j==0) break;
+                    if (j == 0) break;
 
                 }
             }
