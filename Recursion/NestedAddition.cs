@@ -25,5 +25,23 @@ namespace DotNetAlgo.Recursion
             }
             return Total;
         }
+
+
+        public int Solve2(object[] nestedarray)
+        {
+            var Total = 0;
+            for (var i = 0; i < nestedarray.Length; i++)
+            {
+                if (nestedarray[i].GetType() == typeof(int))
+                {
+                    Total += (int)nestedarray[i];
+                }
+                else 
+                {
+                    Total += Solve2((object[])nestedarray[i]);
+                }
+            }
+            return Total;
+        }
     }
 }
