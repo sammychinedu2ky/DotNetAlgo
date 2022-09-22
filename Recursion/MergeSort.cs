@@ -8,13 +8,15 @@ namespace DotNetAlgo.Recursion
 {
     internal class MergeSort
     {
-        public static int[] Solve(int[] array)
+        public static int[] Sort(int[] array)
         {
-            if (array.Length <= 1) return array;
+            if (array.Length == 1) return array;
             var middle = array.Length / 2;
             var left = array.Take(middle).ToArray();
             var right = array.Skip(middle).ToArray();
-            return Merge(Solve(left), Solve(right));
+            var sortLeft = Sort(left);
+            var sortRight = Sort(right);
+            return Merge(sortLeft,sortRight);
         }
         public static int[] Merge(int[] left, int[] right)
         {
