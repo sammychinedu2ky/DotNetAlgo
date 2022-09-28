@@ -33,7 +33,6 @@ namespace DotNetAlgo.Recursion
                     output.Add(right[0]);
                     right = right.Skip(1).ToArray();
                 }
-                // output = output.Skip(1).ToArray();
             }
             // return output.Concat(left).Concat(right).ToArray();
             output.AddRange(left);
