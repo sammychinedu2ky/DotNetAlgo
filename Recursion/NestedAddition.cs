@@ -36,7 +36,7 @@ namespace DotNetAlgo.Recursion
                 {
                     Total += (int)nestedarray[i];
                 }
-                else 
+                else
                 {
                     Total += Solve2((object[])nestedarray[i]);
                 }

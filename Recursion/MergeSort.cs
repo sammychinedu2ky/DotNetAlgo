@@ -16,7 +16,7 @@ namespace DotNetAlgo.Recursion
             var right = array.Skip(middle).ToArray();
             var sortLeft = Sort(left);
             var sortRight = Sort(right);
-            return Merge(sortLeft,sortRight);
+            return Merge(sortLeft, sortRight);
         }
         public static int[] Merge(int[] left, int[] right)
         {
@@ -33,8 +33,9 @@ namespace DotNetAlgo.Recursion
                     output.Add(right[0]);
                     right = right.Skip(1).ToArray();
                 }
-               // output = output.Skip(1).ToArray();
+                // output = output.Skip(1).ToArray();
             }
+            // return output.Concat(left).Concat(right).ToArray();
             output.AddRange(left);
             output.AddRange(right);
             return output.ToArray();
