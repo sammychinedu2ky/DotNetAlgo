@@ -8,10 +8,12 @@ namespace DotNetAlgo.Recursion
 {
     internal class MergeSort
     {
+        public static int Count = 0;
         public static int[] Sort(int[] array)
         {
+            Count++;
             if (array.Length == 1) return array;
-            var middle = array.Length / 2;
+            var middle = array.Length /array.Length;
             var left = array.Take(middle).ToArray();
             var right = array.Skip(middle).ToArray();
             var sortLeft = Sort(left);
@@ -20,9 +22,13 @@ namespace DotNetAlgo.Recursion
         }
         public static int[] Merge(int[] left, int[] right)
         {
+            Console.WriteLine(System.Text.Json.JsonSerializer.Serialize(left));
+            Console.WriteLine(System.Text.Json.JsonSerializer.Serialize(right));
             List<int> output = new();
             while (left.Length > 0 && right.Length > 0)
             {
+               
+               
                 if (left[0] < right[0])
                 {
                     output.Add(left[0]);

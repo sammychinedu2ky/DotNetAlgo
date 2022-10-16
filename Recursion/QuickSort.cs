@@ -15,7 +15,7 @@ namespace DotNetAlgo.Recursion
                 return numbers;
             }
             int pivot = numbers[numbers.Count - 1];
-            numbers.RemoveAt(numbers.Count - 1);
+            //numbers.RemoveAt(numbers.Count - 1);
             List<int> left = new();
             List<int> right = new();
             List<int> output = new();
