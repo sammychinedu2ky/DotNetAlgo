@@ -17,7 +17,9 @@ class Program
         // Console.WriteLine(MergeSort.Count);
         //  Console.WriteLine(mergeSort);
         // Console.WriteLine(bubbleSort);
-        var radixSort = RadixSort.Sort(new List<int>() { 23, 54, 1, 5, 32, 9 });
+        var radixSort = RadixSort.Sort(new List<int>() { 23, 54, 1, 5, 32, 9, 900 });
+        //var r2 = RadixSort.SortUsingBinary(new List<int>() { 23, 54, 1, 5, 32, 9,900 });
         Console.WriteLine(JsonSerializer.Serialize(radixSort));
+      //  Console.WriteLine(JsonSerializer.Serialize(r2));
     }
 }
