@@ -34,5 +34,26 @@ namespace DotNetAlgo.Search
             }
            // return default;
         }
+
+        public static bool Search2(List<int> numbers, int target)
+        {
+            int min = 0;
+            int max = numbers.Count - 1;
+            while (min < max)
+            {
+                int index = (max + min) / 2;
+                int element = numbers[index];
+                if (element < target)
+                {
+                    min = index + 1;
+                }
+                else if (element > target)
+                {
+                    max = index - 1;
+                }
+                else return true;
+            }
+            return false; ;
+        }
     }
 }

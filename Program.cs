@@ -22,6 +22,6 @@ class Program
         //var r2 = RadixSort.SortUsingBinary(new List<int>() { 23, 54, 1, 5, 32, 9,900 });
         //Console.WriteLine(JsonSerializer.Serialize(radixSort));
         //  Console.WriteLine(JsonSerializer.Serialize(r2));
-        Console.WriteLine(BinarySearch.Search(new List<int>() { 1, 2 }, 1));
+        Console.WriteLine(BinarySearch.Search2(new List<int>() { 1, 2 }, 9));
     }
 }
