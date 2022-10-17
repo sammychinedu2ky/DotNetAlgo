@@ -30,8 +30,8 @@ class Program
         arrayList.Push(3);
         arrayList.Push(4);
         arrayList.Push(5);
-        arrayList.Pop();
-        //arrayList.Delete(2);
+       // arrayList.Pop();
+        arrayList.Delete(2);
         Console.WriteLine(JsonSerializer.Serialize(arrayList.GetItems()));
     }
 }

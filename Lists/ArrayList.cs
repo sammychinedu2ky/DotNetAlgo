@@ -33,8 +33,10 @@ namespace DotNetAlgo.Lists
         public T Pop()
         {
             var item = _items[Length - 1];
-            _items.Remove(Length - 1);
-            Length--;
+            //_items.Remove(Length - 1);
+            //Length--;
+            //return item;
+            Delete(Length - 1);
             return item;
         }
 
