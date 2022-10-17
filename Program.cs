@@ -1,6 +1,7 @@
 ﻿using DotNetAlgo.Sorts;
 using DotNetAlgo.Recursion;
 using DotNetAlgo.Search;
+using DotNetAlgo.Lists;
 using System.Text.Json;
 
 class Program
@@ -22,6 +23,15 @@ class Program
         //var r2 = RadixSort.SortUsingBinary(new List<int>() { 23, 54, 1, 5, 32, 9,900 });
         //Console.WriteLine(JsonSerializer.Serialize(radixSort));
         //  Console.WriteLine(JsonSerializer.Serialize(r2));
-        Console.WriteLine(BinarySearch.Search2(new List<int>() { 1, 2 }, 9));
+       // Console.WriteLine(BinarySearch.Search2(new List<int>() { 1, 2 }, 9));
+        var arrayList = new ArrayList<int>();
+        arrayList.Push(1);
+        arrayList.Push(2);
+        arrayList.Push(3);
+        arrayList.Push(4);
+        arrayList.Push(5);
+        arrayList.Pop();
+        //arrayList.Delete(2);
+        Console.WriteLine(JsonSerializer.Serialize(arrayList.GetItems()));
     }
 }
