@@ -11,8 +11,9 @@ namespace DotNetAlgo.Lists
         private Dictionary<int, T> _items = new();
         public int Length { get; set; } = 0;
 
-        public void Delete(int index)
+        public T Delete(int index)
         {
+            var item = _items[index];
            // Console.WriteLine(Length);
             while(index < Length-1)
             {
@@ -21,7 +22,7 @@ namespace DotNetAlgo.Lists
 
             }
             _items.Remove(Length-1);
-           // return default;
+            return item;
         }
 
         public T Get(int index)
@@ -49,6 +50,6 @@ namespace DotNetAlgo.Lists
         void Push(T value);
         T Pop();
         T Get(int index);
-        void Delete(int index);
+        T Delete(int index);
     }
 }
