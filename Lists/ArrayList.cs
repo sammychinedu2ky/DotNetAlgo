@@ -29,12 +29,12 @@ namespace DotNetAlgo.Lists
             return _items[index];
         }
         public Dictionary<int, T> GetItems() => _items;
-        public void Pop()
+        public T Pop()
         {
             var item = _items[Length - 1];
             _items.Remove(Length - 1);
             Length--;
-           // return item;
+            return item;
         }
 
         public void Push(T value)
@@ -47,7 +47,7 @@ namespace DotNetAlgo.Lists
     {
         int Length { get; set; }
         void Push(T value);
-        void Pop();
+        T Pop();
         T Get(int index);
         void Delete(int index);
     }
