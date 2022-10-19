@@ -5,7 +5,7 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 
-namespace DotNetAlgo.Recursion
+namespace DotNetAlgo.Sorts
 {
     internal class RadixSort
     {
@@ -18,7 +18,7 @@ namespace DotNetAlgo.Recursion
             for (var unit = 1; unit <= maxUnit; unit++)
             {
                 // add into bucket
-                while(output.Any())
+                while (output.Any())
                 {
                     var removed = output[0];
                     output.RemoveAt(0);
@@ -28,7 +28,7 @@ namespace DotNetAlgo.Recursion
                     Console.WriteLine(JsonSerializer.Serialize(bucket));
                 }
                 // remove from bucket into output
-                for(var i=0; i<bucket.Count; i++)
+                for (var i = 0; i < bucket.Count; i++)
                 {
                     while (bucket[i].Any())
                     {
@@ -55,7 +55,7 @@ namespace DotNetAlgo.Recursion
                     var removed = output[0];
                     output.RemoveAt(0);
                     var b = Convert.ToString(removed, 2);
-                    var getModulus = (int)(Int64.Parse(b) % Math.Pow(10, unit));
+                    var getModulus = (int)(long.Parse(b) % Math.Pow(10, unit));
                     var index = (int)(getModulus / Math.Pow(10, unit - 1));
                     bucket[index].Add(removed);
                     Console.WriteLine(JsonSerializer.Serialize(bucket));
