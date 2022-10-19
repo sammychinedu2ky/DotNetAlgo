@@ -36,16 +36,15 @@ namespace DotNetAlgo.Lists
                 {
                     Tail = Head;
                 }
-               
                 return res;
             }
             while(start < index)
             {
-                if(start > index - 2)
+                if(start == index - 1)
                 {
                     if(node?.Next == Tail)
                     {
-                        Tail = node;
+                      Tail = node;
                     }
                     res = node?.Next;
                     node!.Next = node.Next!.Next;

@@ -42,7 +42,7 @@ class Program
         //{
         //    WriteIndented = true,
         //}));
-        Console.WriteLine(JsonSerializer.Serialize(linkedList.Delete(1)));
+        Console.WriteLine(JsonSerializer.Serialize(linkedList.Delete(2)));
         Console.WriteLine(JsonSerializer.Serialize(linkedList, new JsonSerializerOptions
         {
             WriteIndented = true
