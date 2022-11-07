@@ -3,6 +3,7 @@ using DotNetAlgo.Recursion;
 using DotNetAlgo.Search;
 using DotNetAlgo.Lists;
 using System.Text.Json;
+using DotNetAlgo.Trees;
 
 class Program
 {
@@ -32,20 +33,29 @@ class Program
         // arrayList.Push(5);
         //// arrayList.Pop();
         // arrayList.Delete(2);
-        // Console.WriteLine(JsonSerializer.Serialize(arrayList.GetItems()));
-        var linkedList = new LinkedList();
-        linkedList.Push(1);
-        linkedList.Push(2);
-        linkedList.Push(3);
+        //// Console.WriteLine(JsonSerializer.Serialize(arrayList.GetItems()));
+        //var linkedList = new LinkedList();
+        //linkedList.Push(1);
+        //linkedList.Push(2);
+        //linkedList.Push(3);
         // var getStuff = linkedList.Get(2);
         //Console.WriteLine(JsonSerializer.Serialize(linkedList, new JsonSerializerOptions
         //{
         //    WriteIndented = true,
         //}));
-        Console.WriteLine(JsonSerializer.Serialize(linkedList.Delete(2)));
-        Console.WriteLine(JsonSerializer.Serialize(linkedList, new JsonSerializerOptions
+        //Console.WriteLine(JsonSerializer.Serialize(linkedList.Delete(2)));
+        //Console.WriteLine(JsonSerializer.Serialize(linkedList, new JsonSerializerOptions
+        //{
+        //    WriteIndented = true
+        //})); ;
+        var binarySearchTree = new BinarySearchTree();
+        binarySearchTree.Add(8);
+        binarySearchTree.Add(3);
+        binarySearchTree.Add(10);
+        binarySearchTree.Add(2);
+        Console.WriteLine(JsonSerializer.Serialize(binarySearchTree.Delete(3), new JsonSerializerOptions
         {
             WriteIndented = true
-        })); ;
+        }));
     }
 }
