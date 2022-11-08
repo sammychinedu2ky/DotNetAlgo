@@ -45,35 +45,42 @@ namespace DotNetAlgo.Trees
             }
             Root = new Node(input);
         }
-        public Node Delete(int value)
+        public Node? Delete(int value)
         {
 
             return DeleteItem(value, this.Root);
         }
 
-        public Node DeleteItem(int value, Node node)
+        public Node? DeleteItem(int value, Node? node)
         {
             if (node == null)
             {
-                return null;
+                node = null;
             }
             else if (value < node.Value) node.Left = DeleteItem(value, node.Left);
             else if (value > node.Value) node.Right = DeleteItem(value, node.Right);
             else
             {
-                if(node.Right is null)
+                // handles leaf nodes although not necessary
+                if(node.Left is null && node.Right is null)
                 {
-                    return node.Left;
+                    node = null;
+                }
+                // can handle both leaf nodes and nodes with one children if returned
+                else if(node.Right is null)
+                {
+                   node = node.Left;
                 }
                 else if( node.Left is null)
                 {
-                    return node.Right;
+                   node = node.Right;
                 }
                 else
                 {
                     node.Value = findLeastRight(node.Right);
                     node.Right = DeleteItem(node.Value, node.Right);
                 }
+           
             }
             return node;
         }

@@ -4,7 +4,7 @@ using DotNetAlgo.Search;
 using DotNetAlgo.Lists;
 using System.Text.Json;
 using DotNetAlgo.Trees;
-
+using DotNetAlgo.TreesAVL;
 class Program
 {
 
@@ -48,12 +48,23 @@ class Program
         //{
         //    WriteIndented = true
         //})); ;
-        var binarySearchTree = new BinarySearchTree();
-        binarySearchTree.Add(8);
-        binarySearchTree.Add(3);
-        binarySearchTree.Add(10);
-        binarySearchTree.Add(2);
-        Console.WriteLine(JsonSerializer.Serialize(binarySearchTree.Delete(3), new JsonSerializerOptions
+        //var binarySearchTree = new BinarySearchTree();
+        //binarySearchTree.Add(8);
+        //binarySearchTree.Add(3);
+        //binarySearchTree.Add(10);
+        //binarySearchTree.Add(2);
+        //Console.WriteLine(JsonSerializer.Serialize(binarySearchTree.Delete(180), new JsonSerializerOptions
+        //{
+        //    WriteIndented = true
+        //}));
+        var avlTree = new AvlTree();
+        avlTree.Add(8);
+        avlTree.Add(9);
+        avlTree.Add(10);
+        avlTree.Add(11);
+        avlTree.Add(12);
+      
+        Console.WriteLine(JsonSerializer.Serialize(avlTree.Root, new JsonSerializerOptions
         {
             WriteIndented = true
         }));
