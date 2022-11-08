@@ -63,6 +63,19 @@ class Program
         avlTree.Add(10);
         avlTree.Add(11);
         avlTree.Add(12);
+        avlTree.Add(13);
+        avlTree.Add(14);
+        avlTree.Add(15);
+        avlTree.Add(16);
+        avlTree.Add(17);
+        avlTree.Add(18);
+        avlTree.Add(19);
+        avlTree.Add(20);
+        avlTree.Add(21);
+        avlTree.Add(22);
+        avlTree.Add(23);
+        avlTree.Add(24);
+        avlTree.Add(25);
       
         Console.WriteLine(JsonSerializer.Serialize(avlTree.Root, new JsonSerializerOptions
         {
