@@ -98,8 +98,7 @@ namespace DotNetAlgo.TreesAVL
 
         private void RotateRR()
         {
-            Node n = new Node(Value) { Left = Left, Right = Right };
-            Right = n;
+            Right = new Node(Value) { Left = Left, Right = Right };
             Right.Left = Left?.Right;
             Value = Left!.Value;
             Left = Left.Left;
@@ -109,8 +108,7 @@ namespace DotNetAlgo.TreesAVL
         }
         private void RotateLL()
         {
-            Node n = new Node(Value){ Left = Left, Right=Right };
-            Left = n;
+            Left = new Node(Value){ Left = Left, Right=Right };
             Left.Right = Right?.Left;
             Value = Right.Value;
             Right = Right.Right;
