@@ -5,6 +5,8 @@ using DotNetAlgo.Lists;
 using System.Text.Json;
 using DotNetAlgo.Trees;
 using DotNetAlgo.TreesAVL;
+using Node = DotNetAlgo.Trees.Node;
+
 class Program
 {
 
@@ -57,29 +59,41 @@ class Program
         //{
         //    WriteIndented = true
         //}));
-        var avlTree = new AvlTree();
-        avlTree.Add(8);
-        avlTree.Add(9);
-        avlTree.Add(10);
-        avlTree.Add(11);
-        avlTree.Add(12);
-        avlTree.Add(13);
-        avlTree.Add(14);
-        avlTree.Add(15);
-        avlTree.Add(16);
-        avlTree.Add(17);
-        avlTree.Add(18);
-        avlTree.Add(19);
-        avlTree.Add(20);
-        avlTree.Add(21);
-        avlTree.Add(22);
-        avlTree.Add(23);
-        avlTree.Add(24);
-        avlTree.Add(25);
-      
-        Console.WriteLine(JsonSerializer.Serialize(avlTree.Root, new JsonSerializerOptions
-        {
-            WriteIndented = true
-        }));
+        //var avlTree = new AvlTree();
+        //avlTree.Add(8);
+        //avlTree.Add(9);
+        //avlTree.Add(10);
+        //avlTree.Add(11);
+        //avlTree.Add(12);
+        //avlTree.Add(13);
+        //avlTree.Add(14);
+        //avlTree.Add(15);
+
+
+        //Console.WriteLine(JsonSerializer.Serialize(avlTree.Root, new JsonSerializerOptions
+        //{
+        //    WriteIndented = true
+        //}));
+
+        //var binarySearchTree = new BinarySearchTree();
+        //binarySearchTree.Add(8);
+        //binarySearchTree.Add(3);
+        //binarySearchTree.Add(1);
+        //binarySearchTree.Add(6);
+        //binarySearchTree.Add(4);
+        //binarySearchTree.Add(7);
+        //binarySearchTree.Add(10);
+        //binarySearchTree.Add(14);
+        //binarySearchTree.Add(13);
+        //Console.WriteLine(String.Join(",", binarySearchTree.PreOrder(binarySearchTree.Root, new List<int>())));
+        //Console.WriteLine(String.Join(",", binarySearchTree.InOrder(binarySearchTree.Root, new List<int>())));
+        //Console.WriteLine(String.Join(",", binarySearchTree.PostOrder(binarySearchTree.Root, new List<int>())));
+        //Console.WriteLine(String.Join(",", binarySearchTree.BreadthFirst(binarySearchTree.Root, new List<int>())));
+        //var queue = new Queue<Node>();
+        //queue.Enqueue(binarySearchTree.Root);
+        //Console.WriteLine(String.Join(",", binarySearchTree.BreadthFirstRecursive(queue, new List<int>())));
+        var arr = new int[] { 2, 4, 1, 6, 4, 9 };
+        var heapSort = new HeapSort(arr);
+        Console.WriteLine(String.Join(",", heapSort.Sort()));
     }
 }
