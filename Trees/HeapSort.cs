@@ -43,7 +43,7 @@ namespace DotNetAlgo.Trees
         }
         public int[] Sort()
         {
-            for (int i = array.Length - 1; i >= 0; i--)
+            for (int i = array.Length - 1; i > 0; i--)
             {
                 (array[0], array[i]) = (array[i], array[0]);
                 Heapify(array, i, 0);
