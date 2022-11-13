@@ -7,4 +7,17 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Graphs\Data.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Graphs\Data.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+ 
+
+
 </Project>
