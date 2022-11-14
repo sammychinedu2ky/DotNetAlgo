@@ -16,7 +16,7 @@ namespace DotNetAlgo.Graphs
         public string FindMostCommonTitle(int userId, int degreeOfSeperation)
         {
             var dic = new Dictionary<string, int>();
-            HashSet<int> hash = new();
+            HashSet<int> set = new();
             var mainQueue = new Queue<List<int>>();
             mainQueue.Enqueue(new() { userId });
             for (var i = 0; i <= degreeOfSeperation; i++)
@@ -27,7 +27,7 @@ namespace DotNetAlgo.Graphs
                     var listOfIds = mainQueue.Dequeue();
                     foreach (var id in listOfIds)
                     {
-                        if (hash.Add(id))
+                        if (set.Add(id))
                         {
                             var user = GetUser(id);
                             dic[user.Title] = dic.ContainsKey(user.Title) ? dic[user.Title] + 1 : 1;
