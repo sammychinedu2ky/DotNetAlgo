@@ -95,7 +95,19 @@ class Program
         //var arr = new int[] { 2, 4, 1, 6, 4, 9 };
         //var heapSort = new HeapSort(arr);
         //Console.WriteLine(String.Join(",", heapSort.Sort()));
-        var retrieveData = new RetrieveData();
-        Console.WriteLine(retrieveData.FindMostCommonTitle(306,4));
+        //var retrieveData = new RetrieveData();
+        //Console.WriteLine(retrieveData.FindMostCommonTitle(306,4));
+        var pathFinding = new PathFinding();
+        pathFinding.Matrix = JsonSerializer.Deserialize<List<List<int>>>("""
+
+            [
+                [2, 0, 0, 0],
+                [0, 1, 0, 0],
+                [0, 0, 2, 0],
+                [0, 0, 0, 0]
+              ]
+
+            """)!;
+        Console.WriteLine(pathFinding.FindShortestPath(0,0, 2,2));
     }
 }

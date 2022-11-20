@@ -7,12 +7,14 @@ namespace DotNetAlgo.Graphs
     {
         private UserModel? GetUser(int userId)
         {
-            var path = Path.Combine(Environment.CurrentDirectory, "Data.json");
+            var path = Path.Combine(Environment.CurrentDirectory, "Graphs", "Data.json");
+            var path2 = Path.Combine(AppContext.BaseDirectory, "Graphs", "Data.json");
             var p = JsonSerializer.Deserialize<List<UserModel>>
-                (File.ReadAllText("Graphs\\Data.json"))!.FirstOrDefault(x => x.Id == userId);
+                (File.ReadAllText(path2))!.FirstOrDefault(x => x.Id == userId);
+
             return p;
         }
-   
+
         public string FindMostCommonTitle(int userId, int degreeOfSeperation)
         {
             var dic = new Dictionary<string, int>();
