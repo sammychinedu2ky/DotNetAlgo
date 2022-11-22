@@ -8,7 +8,7 @@ namespace DotNetAlgo.Search
 {
     internal class BinarySearch
     {
-        public static bool Search(List<int> numbers,int target)
+        public static bool Search(List<int> numbers, int target)
         {
             int middle = numbers.Count / 2;
             while (true)
@@ -16,9 +16,9 @@ namespace DotNetAlgo.Search
                 if (numbers[middle] < target && numbers.Count > 1)
                 {
                     numbers = numbers.Skip(middle).ToList();
-                    middle = numbers.Count/2;
+                    middle = numbers.Count / 2;
                 }
-                else if (numbers[middle] > target && numbers.Count>1)
+                else if (numbers[middle] > target && numbers.Count > 1)
                 {
                     numbers = numbers.Take(middle).ToList();
                     middle = numbers.Count / 2;
@@ -32,7 +32,7 @@ namespace DotNetAlgo.Search
                     return false;
                 }
             }
-           // return default;
+            // return default;
         }
 
         public static bool Search2(List<int> numbers, int target)

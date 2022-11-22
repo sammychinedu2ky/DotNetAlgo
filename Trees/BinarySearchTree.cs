@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace DotNetAlgo.Trees
 {
-    internal class Node { 
-     public Node(int value)
+    internal class Node
+    {
+        public Node(int value)
         {
             Value = value;
         }
@@ -24,23 +25,23 @@ namespace DotNetAlgo.Trees
             var current = Root;
             while (current is not null)
             {
-                if(input<current?.Value)
+                if (input < current?.Value)
                 {
                     if (current.Left is null)
                     {
                         current.Left = new Node(input);
                         return;
-                     }
+                    }
                     else current = current.Left;
                 }
                 else
                 {
-                   if(current!.Right is null)
+                    if (current!.Right is null)
                     {
                         current.Right = new Node(input);
                         return;
                     }
-                   else current = current.Right;
+                    else current = current.Right;
                 }
             }
             Root = new Node(input);
@@ -62,25 +63,25 @@ namespace DotNetAlgo.Trees
             else
             {
                 // handles leaf nodes although not necessary
-                if(node.Left is null && node.Right is null)
+                if (node.Left is null && node.Right is null)
                 {
                     node = null;
                 }
                 // can handle both leaf nodes and nodes with one children if returned
-                else if(node.Right is null)
+                else if (node.Right is null)
                 {
-                   node = node.Left;
+                    node = node.Left;
                 }
-                else if( node.Left is null)
+                else if (node.Left is null)
                 {
-                   node = node.Right;
+                    node = node.Right;
                 }
                 else
                 {
                     node.Value = findLeastRight(node.Right);
                     node.Right = DeleteItem(node.Value, node.Right);
                 }
-           
+
             }
             return node;
         }
@@ -88,7 +89,7 @@ namespace DotNetAlgo.Trees
         public int findLeastRight(Node node)
         {
             int least = node.Value;
-            while(node.Left is not null)
+            while (node.Left is not null)
             {
                 node = node.Left;
                 least = node.Value;
@@ -96,12 +97,12 @@ namespace DotNetAlgo.Trees
             return least;
         }
 
-        public List<int>? PreOrder(Node? node,List<int> list)
+        public List<int>? PreOrder(Node? node, List<int> list)
         {
             if (node is null) return null;
             list.Add(node.Value);
-           PreOrder(node.Left, list);
-           PreOrder(node.Right, list);
+            PreOrder(node.Left, list);
+            PreOrder(node.Right, list);
             return list;
         }
         public List<int> InOrder(Node node, List<int> list)
@@ -135,12 +136,12 @@ namespace DotNetAlgo.Trees
         {
             Queue<Node> queue = new Queue<Node>();
             queue.Enqueue(node);
-            while(queue.Count > 0)
+            while (queue.Count > 0)
             {
                 var current = queue.Dequeue();
                 list.Add(current.Value);
-                if(current.Left != null) queue.Enqueue(current.Left);
-                if(current.Right != null) queue.Enqueue(current.Right);
+                if (current.Left != null) queue.Enqueue(current.Left);
+                if (current.Right != null) queue.Enqueue(current.Right);
             }
 
             return list;
@@ -150,8 +151,8 @@ namespace DotNetAlgo.Trees
             if (queue.Count < 1) return list;
             var item = queue.Dequeue();
             list.Add(item.Value);
-            if(item.Left != null)queue.Enqueue(item.Left);
-            if(item.Right != null) queue.Enqueue(item.Right);
+            if (item.Left != null) queue.Enqueue(item.Left);
+            if (item.Right != null) queue.Enqueue(item.Right);
             return BreadthFirstRecursive(queue, list);
         }
     }

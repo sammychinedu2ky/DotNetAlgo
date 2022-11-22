@@ -19,11 +19,11 @@ namespace DotNetAlgo.Trees
                 largest = leftNodeIndex;
             }
             // check if the right node exist and if it is greater than the largest value
-             if (rightNodeIndex < maxIndex && array[rightNodeIndex] > array[largest])
+            if (rightNodeIndex < maxIndex && array[rightNodeIndex] > array[largest])
             {
                 largest = rightNodeIndex;
-             }
-             // if the largest is not equal to the parent node(current index) swap and heapify downwards
+            }
+            // if the largest is not equal to the parent node(current index) swap and heapify downwards
             if (largest != currentIndex)
             {
                 (array[currentIndex], array[largest]) = (array[largest], array[currentIndex]);
@@ -34,9 +34,9 @@ namespace DotNetAlgo.Trees
         public HeapSort(int[] array)
         {
             //  Create Heap 
-            for(int nonLeafNode = (array.Length/2)-1; nonLeafNode >= 0; nonLeafNode--)
+            for (int nonLeafNode = (array.Length / 2) - 1; nonLeafNode >= 0; nonLeafNode--)
             {
-                Heapify(array,array.Length,nonLeafNode);
+                Heapify(array, array.Length, nonLeafNode);
             }
             this.array = array;
 

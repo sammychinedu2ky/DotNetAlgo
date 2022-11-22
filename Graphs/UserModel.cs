@@ -20,5 +20,5 @@ namespace DotNetAlgo.Graphs
         [JsonPropertyName("connections")]
         public List<int> Connections { get; set; }
     }
-    
+
 }

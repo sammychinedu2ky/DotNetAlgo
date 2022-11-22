@@ -97,17 +97,20 @@ class Program
         //Console.WriteLine(String.Join(",", heapSort.Sort()));
         //var retrieveData = new RetrieveData();
         //Console.WriteLine(retrieveData.FindMostCommonTitle(306,4));
-        var pathFinding = new PathFinding();
-        pathFinding.Matrix = JsonSerializer.Deserialize<List<List<int>>>("""
+        //var pathFinding = new PathFinding();
+        //pathFinding.Matrix = JsonSerializer.Deserialize<List<List<int>>>("""
 
-            [
-                [2, 0, 0, 0],
-                [0, 1, 0, 0],
-                [0, 0, 2, 0],
-                [0, 0, 0, 0]
-              ]
+        //    [
+        //        [2, 0, 0, 0],
+        //        [1, 1, 1, 1],
+        //        [1, 0, 2, 0],
+        //        [0, 0, 0, 0]
+        //      ]
 
-            """)!;
-        Console.WriteLine(pathFinding.FindShortestPath(0,0, 2,2));
+        //    """)!;
+        //Console.WriteLine(pathFinding.FindShortestPath(0, 0, 2, 2));
+        var tries = new Tries();
+        Console.WriteLine(JsonSerializer.Serialize(tries.Root));
+        Console.WriteLine(JsonSerializer.Serialize(tries.Root.Complete("san")));
     }
 }

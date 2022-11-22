@@ -9,11 +9,15 @@
 
   <ItemGroup>
     <None Remove="Graphs\Data.json" />
+    <None Remove="Trees\Data.json" />
   </ItemGroup>
 
   <ItemGroup>
     <Content Include="Graphs\Data.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Trees\Data.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
 

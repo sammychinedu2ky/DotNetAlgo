@@ -60,14 +60,15 @@ namespace DotNetAlgo.Graphs
                 //78-82 same with 61-62
                 var aNeighbours = aQueue.ToList().Aggregate(new List<DataPoint>(), (acc, next) => acc.Concat(GetNeighbours(visited, next.X, next.Y)).ToList());
                 aQueue = new Queue<DataPoint>();
-                for(var i=0; i<aNeighbours.Count; i++)
+                Console.WriteLine(aNeighbours.Count);
+                for (var i = 0; i < aNeighbours.Count; i++)
                 {
                     var neighbour = aNeighbours[i];
-                    if(neighbour.OpenedBy == OpenedBy.BY_B)
+                    if (neighbour.OpenedBy == OpenedBy.BY_B)
                     {
                         return neighbour.Length + iteration;
                     }
-                    else if(neighbour.OpenedBy == OpenedBy.NO_ONE)
+                    else if (neighbour.OpenedBy == OpenedBy.NO_ONE)
                     {
                         neighbour.Length = iteration;
                         neighbour.OpenedBy = OpenedBy.BY_A;
@@ -110,7 +111,7 @@ namespace DotNetAlgo.Graphs
             if (y - 1 >= 0 && !visited[y - 1][x].Closed) result.Add(visited[y - 1][x]);
             // down
             if (y + 1 < visited.Count && !visited[y + 1][x].Closed) result.Add(visited[y + 1][x]);
-             
+
             return result;
         }
     }

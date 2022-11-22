@@ -13,7 +13,7 @@ namespace DotNetAlgo.Recursion
         {
             Count++;
             if (array.Length == 1) return array;
-            var middle = array.Length /array.Length;
+            var middle = array.Length / array.Length;
             var left = array.Take(middle).ToArray();
             var right = array.Skip(middle).ToArray();
             var sortLeft = Sort(left);
@@ -27,8 +27,8 @@ namespace DotNetAlgo.Recursion
             List<int> output = new();
             while (left.Length > 0 && right.Length > 0)
             {
-               
-               
+
+
                 if (left[0] < right[0])
                 {
                     output.Add(left[0]);

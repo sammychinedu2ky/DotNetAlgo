@@ -14,14 +14,14 @@ namespace DotNetAlgo.Lists
         public T Delete(int index)
         {
             var item = _items[index];
-           // Console.WriteLine(Length);
-            while(index < Length-1)
+            // Console.WriteLine(Length);
+            while (index < Length - 1)
             {
-                _items[index] = _items[index+1];
+                _items[index] = _items[index + 1];
                 index++;
 
             }
-            _items.Remove(Length-1);
+            _items.Remove(Length - 1);
             return item;
         }
 

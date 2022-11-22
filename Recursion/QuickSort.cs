@@ -19,7 +19,7 @@ namespace DotNetAlgo.Recursion
             List<int> left = new();
             List<int> right = new();
             List<int> output = new();
-            for (int i = 0; i < numbers.Count-1; i++)
+            for (int i = 0; i < numbers.Count - 1; i++)
             {
                 int val = numbers[i];
                 if (val < pivot) left.Add(val);

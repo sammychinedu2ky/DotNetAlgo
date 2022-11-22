@@ -26,8 +26,8 @@ namespace DotNetAlgo.Lists
             var start = 0;
             Node? res = default;
             Node? node = Head;
-            if(index >= Length || index < 0) throw new ArgumentOutOfRangeException("index");
-            if(index == 0 )
+            if (index >= Length || index < 0) throw new ArgumentOutOfRangeException("index");
+            if (index == 0)
             {
                 res = Head;
                 Head = Head.Next;
@@ -38,13 +38,13 @@ namespace DotNetAlgo.Lists
                 }
                 return res;
             }
-            while(start < index)
+            while (start < index)
             {
-                if(start == index - 1)
+                if (start == index - 1)
                 {
-                    if(node?.Next == Tail)
+                    if (node?.Next == Tail)
                     {
-                      Tail = node;
+                        Tail = node;
                     }
                     res = node?.Next;
                     node!.Next = node.Next!.Next;
@@ -57,7 +57,7 @@ namespace DotNetAlgo.Lists
                     start++;
                 }
             }
-                return res;
+            return res;
         }
 
         public Node? Get(int index)
@@ -65,7 +65,7 @@ namespace DotNetAlgo.Lists
             var start = 0;
             Node? answer = Head;
             if (index >= Length || index < 0) return null;
-            while(start < index)
+            while (start < index)
             {
                 answer = answer!.Next;
                 start++;
