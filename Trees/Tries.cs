@@ -81,7 +81,7 @@ namespace DotNetAlgo.Trees
 
         private List<string> _complete(string search, string builtWord, List<string> suggestions)
         {
-           
+
             if (suggestions.Count >= 3 || (!string.IsNullOrEmpty(search) && search[0].ToString() != Value))
             {
                 return suggestions;
@@ -93,7 +93,7 @@ namespace DotNetAlgo.Trees
 
             Children.ForEach(child =>
             {
-                child._complete(search.Length>1?search.Substring(1):"", builtWord + Value, suggestions);
+                child._complete(search.Length > 1 ? search.Substring(1) : "", builtWord + Value, suggestions);
             });
             return suggestions;
         }

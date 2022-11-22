@@ -6,6 +6,7 @@ using System.Text.Json;
 using DotNetAlgo.Trees;
 using DotNetAlgo.TreesAVL;
 using DotNetAlgo.Graphs;
+using DotNetAlgo.BloomFilter;
 using Node = DotNetAlgo.Trees.Node;
 class Program
 {
@@ -109,8 +110,11 @@ class Program
 
         //    """)!;
         //Console.WriteLine(pathFinding.FindShortestPath(0, 0, 2, 2));
-        var tries = new Tries();
-        Console.WriteLine(JsonSerializer.Serialize(tries.Root));
-        Console.WriteLine(JsonSerializer.Serialize(tries.Root.Complete("san")));
+        //var tries = new Tries();
+        //Console.WriteLine(JsonSerializer.Serialize(tries.Root.Complete("san")));
+        var bloomFilters = new BloomFilter();
+        bloomFilters.Add("samson");
+        Console.WriteLine(bloomFilters.Contains("samson"));
+        Console.WriteLine(bloomFilters.Contains("samsony"));
     }
 }
