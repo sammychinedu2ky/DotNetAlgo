@@ -49,7 +49,7 @@ namespace DotNetAlgo.BloomFilter
         {
 
             var bytes = new byte[4];
-            XxHash32.TryHash(ASCIIEncoding.UTF8.GetBytes("word"), bytes, out var _, 130);
+            XxHash32.TryHash(ASCIIEncoding.UTF8.GetBytes(word), bytes, out var _, 130);
             return Math.Abs(new ASCIIEncoding().GetString(bytes).GetHashCode() % 100);
         }
     }
